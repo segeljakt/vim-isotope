@@ -1,9 +1,15 @@
-# vim-isotope
+<h1 align="center">vim-isotope</h1>
 
-![Isotope](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/204_Isotopes_of_Hydrogen-01.jpg/800px-204_Isotopes_of_Hydrogen-01.jpg)
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/204_Isotopes_of_Hydrogen-01.jpg/800px-204_Isotopes_of_Hydrogen-01.jpg">
+</p>
 
 
 This plugin provides mappings which convert typed characters into `ˢᵘᵖᵉʳˢᶜʳⁱᵖᵗˢ` and `ₛᵤbₛ꜀ᵣᵢₚₜₛ`.
+
+<p align="center">
+  <img src="https://media.giphy.com/media/3zlnsOm5lndvDni7d1/giphy.gif">
+</p>
 
 
 # Default mappings
