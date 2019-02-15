@@ -9,13 +9,13 @@ This plugin provides mappings which convert typed characters into `ˢᵘᵖᵉʳ
 # Default mappings
 
 ```vim
-" Convert the next character that is typed to a superscript/subscript 
-imap <C-g><C-k> <Plug>Isotope(InsertSuperscript)
-imap <C-g><C-j> <Plug>Isotope(InsertSubscript)
+" Convert the next character that is typed into a superscript/subscript.
+imap <C-g><C-k> <Plug>(IsotopeInsertSuperscript)
+imap <C-g><C-j> <Plug>(IsotopeInsertSubscript)
 
-" While toggled on, convert all characters that are typed to superscripts/subscripts
-imap <C-g><C-g><C-k> <Plug>Isotope(ToggleSuperscript)
-imap <C-g><C-g><C-j> <Plug>Isotope(ToggleSubscript)
+" While toggled on, convert all characters that are typed into superscripts/subscripts.
+imap <C-g><C-g><C-k> <Plug>(IsotopeToggleSuperscript)
+imap <C-g><C-g><C-j> <Plug>(IsotopeToggleSubscript)
 ```
 
 # Supported conversions

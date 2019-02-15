@@ -1,4 +1,16 @@
-let s:superscripts = {
+" vim: et sw=2 sts=2
+
+" Plugin:      https://github.com/segeljakt/vim-isotope
+" Description: Insert superscripts and subscripts with ease.
+" Maintainer:  Klas Segeljakt <klasseg@kth.se>
+
+if exists("s:autoloaded")
+  finish
+el
+  let s:autoloaded = 1
+en
+
+let s:sups = {
   \  '0':'⁰',
   \  '1':'¹',
   \  '2':'²',
@@ -32,7 +44,6 @@ let s:superscripts = {
   \  'n':'ⁿ',
   \  'o':'ᵒ',
   \  'p':'ᵖ',
-  \
   \  'r':'ʳ',
   \  's':'ˢ',
   \  't':'ᵗ',
@@ -42,14 +53,11 @@ let s:superscripts = {
   \  'x':'ˣ',
   \  'y':'ʸ',
   \  'z':'ᶻ',
-  \  'œ':'ꟹ',
   \
   \  'A':'ᴬ',
   \  'B':'ᴮ',
-  \
   \  'D':'ᴰ',
   \  'E':'ᴱ',
-  \
   \  'G':'ᴳ',
   \  'H':'ᴴ',
   \  'I':'ᴵ',
@@ -60,17 +68,14 @@ let s:superscripts = {
   \  'N':'ᴺ',
   \  'O':'ᴼ',
   \  'P':'ᴾ',
-  \
   \  'R':'ᴿ',
-  \
   \  'T':'ᵀ',
   \  'U':'ᵁ',
   \  'V':'ⱽ',
   \  'W':'ᵂ',
-  \  'Æ':'ᴭ',
   \ }
 
-let s:subscripts = {
+let s:subs = {
   \  '0':'₀',
   \  '1':'₁',
   \  '2':'₂',
@@ -89,12 +94,9 @@ let s:subscripts = {
   \  ')':'₎',
   \
   \  'a':'ₐ',
-  \  'b':'₆',
   \  'c':'꜀',
   \  'd':'ₔ',
   \  'e':'ₑ',
-  \  'f':'բ',
-  \  'g':'₉',
   \  'h':'ₕ',
   \  'i':'ᵢ',
   \  'j':'ⱼ',
@@ -104,15 +106,12 @@ let s:subscripts = {
   \  'n':'ₙ',
   \  'o':'ₒ',
   \  'p':'ₚ',
-  \
   \  'r':'ᵣ',
   \  's':'ₛ',
   \  't':'ₜ',
   \  'u':'ᵤ',
   \  'v':'ᵥ',
   \  'x':'ₓ',
-  \  'y':'ᵧ',
-  \  'z':'₂',
   \ }
 
 let s:sub_active = v:false
@@ -125,7 +124,7 @@ fun! isotope#toggle_sup()
     let s:sup_active = v:false
   el
     aug Isotope | au!
-      au InsertCharPre * let v:char = get(s:superscripts, v:char, v:char)
+      au InsertCharPre * let v:char = get(s:sups, v:char, v:char)
     aug END
     let s:sup_active = v:true
     let s:sub_active = v:false
@@ -140,7 +139,7 @@ fun! isotope#toggle_sub()
     let s:sub_active = v:false
   el
     aug Isotope | au!
-      au InsertCharPre * let v:char = get(s:subscripts, v:char, v:char)
+      au InsertCharPre * let v:char = get(s:subs, v:char, v:char)
     aug END
     let s:sub_active = v:true
     let s:sup_active = v:false
@@ -148,18 +147,20 @@ fun! isotope#toggle_sub()
   return ""
 endfun
 
-fun! isotope#single_sub()
+fun! isotope#insert_sup()
   aug IsotopeSingle | au!
-    au InsertCharPre * let v:char = get(s:superscripts, v:char, v:char)
+    au InsertCharPre * let v:char = get(s:sups, v:char, v:char)
           \ | exe "au! IsotopeSingle"
           \ | aug! IsotopeSingle
   aug END
+  return ""
 endfun
 
-fun! isotope#single_sub()
+fun! isotope#insert_sub()
   aug IsotopeSingle | au!
-    au InsertCharPre * let v:char = get(s:subscripts, v:char, v:char)
+    au InsertCharPre * let v:char = get(s:subs, v:char, v:char)
           \ | exe "au! IsotopeSingle"
           \ | aug! IsotopeSingle
   aug END
+  return ""
 endfun
