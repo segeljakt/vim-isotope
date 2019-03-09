@@ -83,7 +83,7 @@ MAPPINGS                                                *vim-isotope-mappings*
                                             *<Plug>(IsotopeInsertSuperscript)*
 Default: <C-g><C-k> ~
 
-Convert the next character that is typed to a subscript.
+Convert the next character that is typed to a superscript.
 
 ------------------------------------------------------------------------------
                                               *<Plug>(IsotopeInsertSubscript)*
