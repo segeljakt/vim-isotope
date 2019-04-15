@@ -11,7 +11,6 @@ This plugin provides mappings which convert typed characters into `ˢᵘᵖᵉʳ
   <img src="https://media.giphy.com/media/3zlnsOm5lndvDni7d1/giphy.gif">
 </p>
 
-
 # Default mappings
 
 ```vim
