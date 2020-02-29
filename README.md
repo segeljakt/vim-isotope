@@ -178,7 +178,6 @@ SUPERSCRIPT       :        ⁽⁾ ⁺ ⁻  ⁰¹²³⁴⁵⁶⁷⁸⁹   ⁼   �
 
 Below is a list of all different kinds of diacritics.
 
-[LINK](Papers/StructuredStreaming.pdf)
 ```
 1ᷙ2ᷙ3ᷙaᷙbᷙcᷙAᷙBᷙCᷙ = LATIN_SMALL_LETTER_ETH
 
