@@ -1,59 +1,126 @@
-*isotope.txt*    Insert superscripts and subscripts with ease
+*isotope.txt*    Insert special characters with ease
 
                                  vim-isotope
 CONTENTS                                                         *vim-isotope*
 
-    1. Introduction ........................ |vim-isotope-introduction|
-    2. Requirements ........................ |vim-isotope-requirements|
-    3. Options ............................. |vim-isotope-options|
-    4. Mappings ............................ |vim-isotope-mappings|
+    1. Introduction ............................... |vim-isotope-introduction|
+    2. Requirements ............................... |vim-isotope-requirements|
+    3. Commands ................................... |vim-isotope-commands|
+    4. Options .................................... |vim-isotope-options|
+    5. Miscellaneous .............................. |vim-isotope-misc|
 
 ==============================================================================
 INTRODUCTION                                        *vim-isotope-introduction*
 
-This plugin provides mappings which convert typed characters into ˢᵘᵖᵉʳˢᶜʳⁱᵖᵗˢ
-and ₛᵤbₛ꜀ᵣᵢₚₜₛ.
+This plugin provides mappings for inserting characters as ˢᵘᵖᵉʳˢᶜʳⁱᵖᵗˢ,
+ₛᵤbₛ꜀ᵣᵢₚₜₛ, u͟n͟d͟e͟r͟l͟i͟n͟e͟, s̶t̶r̶i̶k̶e̶t̶h̶r̶o̶u̶g̶h̶, 𝐒𝐄𝐑𝐈𝐅-𝐁𝐎𝐋𝐃, 𝐒𝐄𝐑𝐈𝐅-𝐈𝐓𝐀𝐋𝐈𝐂,
+𝔉ℜ𝔄𝔎𝔗𝔘ℜ, 𝔻𝕆𝕌𝔹𝕃𝔼-𝕊𝕋ℝ𝕌ℂ𝕂, ᴙƎVƎᴙꙄƎD, INΛƎᴚ⊥Ǝᗡ, ⒸⒾⓇⒸⓁⒺⒹ, and much more.
 
-------------------------------------------------------------------------------
-                                                      *vim-isotope-characters*
-
-Note that unicode does not offer superscript and subscript variants for all
-characters. Below is a list of the supported conversions. Missing characters
-are marked as █.
-
-                Digits       Lowercase    Capital      Symbols ~
-                ------       ---------    -------      ------- ~
-                0 => ⁰/₀     a => ᵃ/ₐ     A => ᴬ/█     + => ⁺/₊ ~
-                1 => ¹/₁     b => ᵇ/█     B => ᴮ/█     - => ⁻/₋ ~
-                2 => ²/₂     c => ᶜ/꜀     C => █/█     = => ⁼/₌ ~
-                3 => ³/₃     d => ᵈ/█     D => ᴰ/█     ( => ⁽/₍ ~
-                4 => ⁴/₄     e => ᵉ/ₑ     E => ᴱ/█     ) => ⁾/₎ ~
-                5 => ⁵/₅     f => ᶠ/█     F => █/█ ~
-                6 => ⁶/₆     g => ᵍ/█     G => ᴳ/█ ~
-                7 => ⁷/₇     h => ʰ/ₕ     H => ᴴ/█ ~
-                8 => ⁸/₈     i => ⁱ/ᵢ     I => ᴵ/█ ~
-                9 => ⁹/₉     j => ʲ/ⱼ     J => ᴶ/█ ~
-                             k => ᵏ/ₖ     K => ᴷ/█ ~
-                             l => ˡ/ₗ     L => ᴸ/█ ~
-                             m => ᵐ/ₘ     M => ᴹ/█ ~
-                             n => ⁿ/ₙ     N => ᴺ/█ ~
-                             o => ᵒ/ₒ     O => ᴼ/█ ~
-                             p => ᵖ/ₚ     P => ᴾ/█ ~
-                             q => █/█     Q => █/█ ~
-                             r => ʳ/ᵣ     R => ᴿ/█ ~
-                             s => ˢ/ₛ     S => █/█ ~
-                             t => ᵗ/ₜ     T => ᵀ/█ ~
-                             u => ᵘ/ᵤ     U => ᵁ/█ ~
-                             v => ᵛ/ᵥ     V => ⱽ/█ ~
-                             w => ʷ/█     W => ᵂ/█ ~
-                             x => ˣ/ₓ     X => █/█ ~
-                             y => ʸ/█     Y => █/█ ~
-                             z => ᶻ/█     Z => █/█ ~
+A complete list can be found in the README.
 
 ==============================================================================
 REQUIREMENTS                                        *vim-isotope-requirements*
 
 A Vim version 7.4 or higher is required for basic functionality.
+
+==============================================================================
+COMMANDS                                                *vim-isotope-commands*
+
+    1. IsotopeInsert ....................................... |:IsotopeInsert|
+    2. IsotopeToggle ....................................... |:IsotopeToggle|
+    3. IsotopeAttach ....................................... |:IsotopeAttach|
+    4. IsotopeSearch ....................................... |:IsotopeSearch|
+    5. IsotopePreview ...................................... |:IsotopePreview|
+
+------------------------------------------------------------------------------
+                                                              *:IsotopeInsert*
+
+Convert the next typed character into a special character whose class is
+specified as an argument.
+
+>
+    :IsotopeInsert SERIF_BOLD
+
+      𝐗
+>
+
+------------------------------------------------------------------------------
+                                                              *:IsotopeToggle*
+
+Toggle on/off conversion into special characters, whose class is specified as
+an argument.
+
+>
+    :IsotopeToggle FRAKTUR
+
+      𝔖𝔞𝔪𝔭𝔩𝔢 𝔗𝔢𝔵𝔱
+>
+
+When called without an argument, any current conversion is toggled off.
+
+------------------------------------------------------------------------------
+                                                              *:IsotopeAttach*
+
+This command can be used in visual mode to attach a diacritic
+(combining character) to every character in a visual selection.
+
+>
+    :'<,'>IsotopeAttach h e h e
+
+      Sͤͪͤͪaͤͪͤͪmͤͪͤͪpͤͪͤͪlͤͪͤͪeͤͪͤͪ ͤͪͤͪtͤͪͤͪeͤͪͤͪxͤͪͤͪtͤͪͤͪ
+
+    :'<,'>IsotopeAttach *below /center zabove
+
+      S̸͙͛a̸͙͛m̸͙͛p̸͙͛l̸͙͛e̸͙͛ ̸͙͛t̸͙͛e̸͙͛x̸͙͛t̸͙͛
+
+    :'<,'>IsotopeAttach .below .above
+
+      Ṩạ̇ṃ̇ṗ̣ḷ̇ẹ̇ ̣̇ṭ̇ẹ̇ẋ̣ṭ̇
+
+    :'<,'>IsotopeAttach xabove xbelow
+
+      S͓̽a͓̽m͓̽p͓̽l͓̽e͓̽ ͓̽t͓̽e͓̽x͓̽t͓̽
+
+    :'<,'>IsotopeAttach ^below ~below ring-above <->below ~above
+
+      S͍̰͎̃̊ã͍̰͎̊m͍̰͎̃̊p͍̰͎̃̊l͍̰͎̃̊ẽ͍̰͎̊ ͍̰͎̃̊t͍̰͎̃̊ẽ͍̰͎̊x͍̰͎̃̊t͍̰͎̃̊
+>
+
+------------------------------------------------------------------------------
+                                                             *:IsotopeAttach!*
+
+You may also insert diacritics by their raw unicode name through the
+`IsotopeAttach!` command:
+
+>
+    :'<,'>IsotopeAttach! LATIN_SMALL_LETTER_H LATIN_SMALL_LETTER_E
+    :'<,'>IsotopeAttach! ASTERISK_BELOW LONG_DOUBLE_SOLIDUS_OVERLAY
+    :'<,'>IsotopeAttach! DOT_BELOW DOT_ABOVE 
+    :'<,'>IsotopeAttach! X_ABOVE X_BELOW
+    :'<,'>IsotopeAttach! CIRCUMFLEX_ACCENT_BELOW CIRCUMFLEX TILDE_BELOW
+>
+
+------------------------------------------------------------------------------
+                                                              *:IsotopeSearch*
+
+This command can be used to search special characters.
+
+>
+    " Locate all classes of special characters.
+    :IsotopeSearch
+
+    " Locate specific classes of special characters.
+    :IsotopeSearch SERIF_BOLD DOUBLE_STRUCK
+>
+
+------------------------------------------------------------------------------
+                                                             *:IsotopePreview*
+
+You can preview the complete list of special characters by running:
+
+>
+    :IsotopePreview
+>
 
 ==============================================================================
 OPTIONS                                                  *vim-isotope-options*
@@ -65,43 +132,45 @@ OPTIONS                                                  *vim-isotope-options*
 Type: bool ~
 Default: v:true ~
 
+The default mappings are:
+
+>
+    " Superscript/subscript/circled-white
+    inoremap <C-g><C-j>      <C-o>:IsotopeInsert SUPERSCRIPT<CR>
+    inoremap <C-g><C-k>      <C-o>:IsotopeInsert SUBSCRIPT<CR>
+    inoremap <C-g><C-c>      <C-o>:IsotopeInsert CIRCLED_WHITE<CR>
+
+    inoremap <C-g><C-g><C-j> <C-o>:IsotopeToggle SUPERSCRIPT<CR>
+    inoremap <C-g><C-g><C-k> <C-o>:IsotopeToggle SUBSCRIPT<CR>
+    inoremap <C-g><C-g><C-c> <C-o>:IsotopeToggle CIRCLED_WHITE<CR>
+
+    " Underline
+    vnoremap <C-g><C-g><C-u> <C-o>:IsotopeAttach -below<CR>
+>
+
 If set to `v:false`, do not use the default mappings.
 
 >
     let g:isotope_use_default_mappings = v:false
 >
 
+
 ==============================================================================
-MAPPINGS                                                *vim-isotope-mappings*
+MISCELLANEOUS                                                   *isotope-misc*
 
-    <Plug>(IsotopeToggleSuperscript) .......|<Plug>(IsotopeToggleSuperscript)|
-    <Plug>(IsotopeToggleSubscript) .........|<Plug>(IsotopeToggleSubscript)|
-    <Plug>(IsotopeInsertSuperscript) .......|<Plug>(IsotopeInsertSuperscript)|
-    <Plug>(IsotopeInsertSubscript) .........|<Plug>(IsotopeInsertSubscript)|
+By default, Vim can display 2 diacritics on top of each other. You can raise
+this limit through the 'maxcombine' option. The maximum is 6:
 
-------------------------------------------------------------------------------
-                                            *<Plug>(IsotopeInsertSuperscript)*
-Default: <C-g><C-k> ~
+>
+    set maxcombine=6
+>
 
-Convert the next character that is typed to a superscript.
+You may also want to toggle on the 'delcombine' option which allows you to
+remove diacritics without deleting the character they are attached to.
 
-------------------------------------------------------------------------------
-                                              *<Plug>(IsotopeInsertSubscript)*
-Default: <C-g><C-j> ~
-
-Convert the next character that is typed to a subscript.
-
-------------------------------------------------------------------------------
-                                            *<Plug>(IsotopeToggleSuperscript)*
-Default: <C-g><C-g><C-k> ~
-
-While toggled on, convert all characters that are typed into superscripts.
-
-------------------------------------------------------------------------------
-                                              *<Plug>(IsotopeToggleSubscript)*
-Default: <C-g><C-g><C-j> ~
-
-While toggled on, convert all characters that are typed into subscripts.
+>
+    set delcombine
+>
 
 ==============================================================================
 " vim:tw=78:ts=4:sts=4:sw=4:ft=help:norl:
