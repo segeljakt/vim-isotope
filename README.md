@@ -123,10 +123,10 @@ To locate characters, you can use the `IsotopeSearch` command:
 
 ```vim
 " Locate all classes of special characters.
-IsotopeSearch
+:IsotopeSearch
 
 " Locate specific classes of special characters.
-IsotopeSearch SERIF_BOLD DOUBLE_STRUCK
+:IsotopeSearch SERIF_BOLD DOUBLE_STRUCK
 ```
 
 Currently, this command cannot be used to find diacritic characters. PRs are welcome.
@@ -136,7 +136,7 @@ Currently, this command cannot be used to find diacritic characters. PRs are wel
 A list of all special characters and diacritics can be viewed by running this command:
 
 ```
-IsotopePreview
+:IsotopePreview
 ```
 
 <details><summary><b>List of Special Characters</b></summary><p>
