@@ -6,6 +6,15 @@
 
 This plugin provides mappings for inserting characters as `ˢᵘᵖᵉʳˢᶜʳⁱᵖᵗˢ`, `ₛᵤbₛ꜀ᵣᵢₚₜₛ`, `u͟n͟d͟e͟r͟l͟i͟n͟e͟`, `s̶t̶r̶i̶k̶e̶t̶h̶r̶o̶u̶g̶h̶`, `𝐒𝐄𝐑𝐈𝐅-𝐁𝐎𝐋𝐃`, `𝐒𝐄𝐑𝐈𝐅-𝐈𝐓𝐀𝐋𝐈𝐂`, `𝔉ℜ𝔄𝔎𝔗𝔘ℜ`, `𝔻𝕆𝕌𝔹𝕃𝔼-𝕊𝕋ℝ𝕌ℂ𝕂`, `ᴙƎVƎᴙꙄƎD`, `INΛƎᴚ⊥Ǝᗡ`, `ⒸⒾⓇⒸⓁⒺⒹ`, and much more. Depending on your setup, some characters may not display correctly.
 
+# Installation
+
+If you are using [vim-plug](https://github.com/junegunn/vim-plug), add this to your config.
+
+```
+Plug 'junegunn/vim-plug'
+```
+
+
 # Special characters
 
 <p align="center">
