@@ -11,7 +11,7 @@ This plugin provides mappings for inserting characters as `ˢᵘᵖᵉʳˢᶜʳ�
 If you are using [vim-plug](https://github.com/junegunn/vim-plug), add this to your config.
 
 ```
-Plug 'junegunn/vim-plug'
+Plug 'segeljakt/vim-isotope'
 ```
 
 
