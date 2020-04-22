@@ -53,7 +53,7 @@ fun! isotope#diacritic#preview()
 endfun
 
 " https://en.wikipedia.org/wiki/Combining_character
-const s:diacritic_raw = {
+let s:diacritic_raw = {
   \ 'GRAVE_ACCENT'                                          : '0300',
   \ 'ACCUTE_ACCENT'                                         : '0301',
   \ 'CIRCUMFLEX'                                            : '0302',
@@ -398,6 +398,6 @@ fun! s:reverse_dict(dict)
   return reversed
 endfun
 
-const s:raw_keys = sort(copy(keys(s:diacritic_raw)))
-const s:alias_keys = sort(copy(keys(s:diacritic_alias)))
-const s:diacritic_reverse_alias = s:reverse_dict(s:diacritic_alias)
+let s:raw_keys = sort(copy(keys(s:diacritic_raw)))
+let s:alias_keys = sort(copy(keys(s:diacritic_alias)))
+let s:diacritic_reverse_alias = s:reverse_dict(s:diacritic_alias)

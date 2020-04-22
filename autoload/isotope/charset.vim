@@ -72,8 +72,8 @@ fun! isotope#charset#preview(...)
   endfor
 endfun
 
-const s:ascii =          "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
-const s:charset = {
+let s:ascii =          "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+let s:charset = {
   \ 'ACUTE'             : '                                Á Ć É Ǵ í ḰĹḾŃŐṔ Ŕś Ű Ẃ ӲŹ      á ć é ǵ í ḱĺḿńőṕ ŕś ú ẃ ӳź    ',
   \ 'CIRCLED_BLACK'     : '               🄌➊➋➌➍➎➏➐➑➒       🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩                                    ',
   \ 'CIRCLED_WHITE'     : '         ⊛⊕ ⊖⨀⊘⓪①②③④⑤⑥⑦⑧⑨  ⧀⊜⧁  ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ ⦸    ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ ⦶  ',
@@ -102,9 +102,9 @@ const s:charset = {
   \ 'SUPERSCRIPT'       : '       ⁽⁾ ⁺ ⁻  ⁰¹²³⁴⁵⁶⁷⁸⁹   ⁼   ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾ ᴿˢᵀᵁⱽᵂ         ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖ ʳˢᵗᵘᵛʷˣʸᶻ    ',
 \ }
 
-const s:keys = sort(keys(copy(s:charset)))
-const s:lo = char2nr(s:ascii[0])
-const s:hi = char2nr(s:ascii[strlen(s:ascii)-1])
-const s:undefined = ' '
+let s:keys = sort(keys(copy(s:charset)))
+let s:lo = char2nr(s:ascii[0])
+let s:hi = char2nr(s:ascii[strlen(s:ascii)-1])
+let s:undefined = ' '
 
 let s:active = ''
